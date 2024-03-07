@@ -2,12 +2,14 @@ pipeline {
     agent any
 
     environment {
+        registry = '939083599624.dkr.ecr.us-east-1.amazonaws.com/node_backend'
+        registryCredential = 'challenge'
         dockerImage = ''
     }
     stages {
         stage ('Checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/Freensh/Node-challenge.git'
+                git branch: 'main', url: 'https://github.com/Freensh/Node-challenge-backend.git'
             }
         }
 
@@ -42,7 +44,7 @@ pipeline {
 
         stage('Deployment'){
             steps {
-                
+
             }
         }
     }
