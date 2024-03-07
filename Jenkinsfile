@@ -21,7 +21,7 @@ pipeline {
         stage ('Build docker container') {
             steps{
                 script {
-                    dockerImage = docker.build "challenge-backend:$BUILD_NUMBER"
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
             }
         }
